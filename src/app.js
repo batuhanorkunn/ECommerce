@@ -7,8 +7,14 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+// ROUTES
 const productRoutes = require('./routes/productRoutes');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+
 app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
   res.send('Merhaba, Node.js çok katmanlı mimari backend projesi çalışıyor!');
